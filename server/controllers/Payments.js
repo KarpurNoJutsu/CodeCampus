@@ -9,8 +9,8 @@ const CourseProgress=require("../models/CourseProgress")
 // for multiple items
 exports.capturePayment = async (req, res) => {
     const {courses} = req.body;
-    const userId = req.userId;
-    console.log("my used id",userId);
+    const userId = req.user.id;
+    console.log("my user id",userId);
     if (courses.length === 0) {
         return res.json({success: false, message: "Please provide course Id"})
     }
@@ -33,11 +33,16 @@ exports.capturePayment = async (req, res) => {
             return res.status(500).json({success: false, message: error.message});
         }
     }
+    // const options = {
+    //     amount: totalAmount * 100,
+    //     currency: "INR",
+    //     receipt:⁠ `receipt_${Date.now()}`
+    // }
     const options = {
         amount: totalAmount * 100,
         currency: "INR",
-        receipt: Math.random(Date.now().toString())
-    }
+        receipt: `receipt_${Date.now()}`
+    };
     try {
         const paymentResponse = await instance.orders.create(options);
         res.json({success: true, message: paymentResponse})

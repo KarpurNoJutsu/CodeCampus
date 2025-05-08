@@ -13,13 +13,15 @@ const initialState = {
     : 0,
 }
 
+console.log("Initial cart state:", initialState)
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action) => {
       const course = action.payload
-      console.log("courrse payloed",course)
+      console.log("Adding course to cart:", course)
       const index = state.cart.findIndex((item) => item._id === course._id)
 
       if (index >= 0) {
@@ -36,11 +38,13 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.cart))
       localStorage.setItem("total", JSON.stringify(state.total))
       localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
+      console.log("Updated cart state:", state)
       // show toast
       toast.success("Course added to cart")
     },
     removeFromCart: (state, action) => {
       const courseId = action.payload
+      console.log("Removing course from cart:", courseId)
       const index = state.cart.findIndex((item) => item._id === courseId)
 
       if (index >= 0) {
@@ -52,11 +56,13 @@ const cartSlice = createSlice({
         localStorage.setItem("cart", JSON.stringify(state.cart))
         localStorage.setItem("total", JSON.stringify(state.total))
         localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
+        console.log("Updated cart state after removal:", state)
         // show toast
         toast.success("Course removed from cart")
       }
     },
     resetCart: (state) => {
+      console.log("Resetting cart")
       state.cart = []
       state.total = 0
       state.totalItems = 0
@@ -64,6 +70,7 @@ const cartSlice = createSlice({
       localStorage.removeItem("cart")
       localStorage.removeItem("total")
       localStorage.removeItem("totalItems")
+      console.log("Cart reset complete")
     },
   },
 })
