@@ -13,9 +13,9 @@ const {cloudinaryConnect}=require("./config/cloudinary");
 const fileUpload=require("express-fileupload");
 const dotenv=require("dotenv");
 dotenv.config();
-const PORT=process.env.PORT||3000;
+const PORT=process.env.PORT||4000;
 
-// connect databse
+// connect database
 database.connect();
 
 // middleware
@@ -23,8 +23,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"*",
-        credentials:true,
+        origin: process.env.FRONTEND_URL || "http://localhost:3000",
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 )
 app.use(
@@ -43,7 +45,6 @@ app.use("/api/v1/profile",profileRoute);
 app.use("/api/v1/course",courseRoute);
 app.use("/api/v1/payment",paymentRoute);
 
-
 // default route
 app.get("/",(req,res)=>{
     return res.json({
@@ -52,9 +53,9 @@ app.get("/",(req,res)=>{
     })
 })
 
-// activate the server at port no 4000
+// activate the server
 app.listen(PORT,()=>{
-    console.log(`app is running ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 })
 
 

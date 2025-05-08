@@ -24,7 +24,7 @@ const InstructorSection = () => {
             </div>
 
             <p className='text-[16px] font-semibold text-richblack-300 w-[80%] max-sm:text-1xl w-[100%] mx-auto'>
-            Instructors from around the world teach millions of students on StudyByte. We provide the tools and skills to teach what you love.
+            Instructors from around the world teach millions of students on CodeCampus. We provide the tools and skills to teach what you love.
             </p>
 
             <div className='w-fit'>

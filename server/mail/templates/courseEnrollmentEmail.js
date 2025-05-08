@@ -1,5 +1,3 @@
-
-
 exports.courseEnrollmentEmail = (courseName, name) => {
     const frontendUrl=process.env.REACT_APP_FRONTEND_URL;
     return `<!DOCTYPE html>
@@ -71,7 +69,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
     <body>
         <div class="container">
             <a href=""><img class="logo" src="https://res.cloudinary.com/dptn1wg62/image/upload/v1690021344/Logo-Full-Light_dmyqu2.png"
-                    alt="StudyByte Logo"></a>
+                    alt="CodeCampus Logo"></a>
             <div class="message">Course Registration Confirmation</div>
             <div class="body">
                 <p>Dear ${name},</p>
