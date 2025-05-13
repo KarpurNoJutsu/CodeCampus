@@ -125,7 +125,7 @@ exports.deleteSection = async (req, res) => {
 			data:course
 		});
 	} catch (error) {
-		console.error("Error deleting section: sameer khan", error);
+		console.error("Error deleting section: karpur kabi", error);
 		res.status(500).json({
 			success: false,
 			message: "Internal server error error",

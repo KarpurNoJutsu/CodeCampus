@@ -53,7 +53,7 @@ I hope this email finds you well. We have received a request to reset the passwo
 <span>If you encounter any issues during the password reset process or if you did not initiate this request, please contact our support team immediately at [Support Email Address] or [Support Phone Number]. We are here to assist you.</span><br><br><br>
 <span>Thank you for using our services. We appreciate your trust in us.</span> <br><br>
 <span classname="font-bold">
-Best regards, <br>Sameer khan <br>CodeCampus
+Best regards, <br>Karpur Kabi <br>Study Byte
 </span>
 `
 		);

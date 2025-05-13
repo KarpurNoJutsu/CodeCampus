@@ -56,7 +56,7 @@ exports.passwordUpdated = (email, name) => {
     <body>
         <div class="container">
             <a href=""><img class="logo"
-                    src="https://res.cloudinary.com/dptn1wg62/image/upload/v1690021344/Logo-Full-Light_dmyqu2.png" alt="CodeCampus Logo"></a>
+                    src="https://res.cloudinary.com/dptn1wg62/image/upload/v1690021344/Logo-Full-Light_dmyqu2.png" alt="Study Byte Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">
                 <p>Hey ${name},</p>
@@ -66,7 +66,7 @@ exports.passwordUpdated = (email, name) => {
             </div>
             <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
                 at
-                <a href="mailto:sameerkhann9412@gmail.com">sameerkhann9412@gmail.com.com</a>. We are here to help!
+                <a href="mailto:kabi.karpur05@gmail.com">kabi.karpur05@gmail.com.com</a>. We are here to help!
             </div>
         </div>
     </body>

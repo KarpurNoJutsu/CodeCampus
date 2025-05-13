@@ -69,7 +69,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
     <body>
         <div class="container">
             <a href=""><img class="logo" src="https://res.cloudinary.com/dptn1wg62/image/upload/v1690021344/Logo-Full-Light_dmyqu2.png"
-                    alt="CodeCampus Logo"></a>
+                    alt="Study Byte Logo"></a>
             <div class="message">Course Registration Confirmation</div>
             <div class="body">
                 <p>Dear ${name},</p>
@@ -80,7 +80,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
                 <a class="cta" href="${frontendUrl}/dashboard/my-profile">Go to Dashboard</a>
             </div>
             <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-                    href="mailto:sameerkhann9412@gmail.com">sameerkhann9412@gmail.com</a>. We are here to help!</div>
+                    href="mailto:kabi.karpur05@gmail.com">kabi.karpur05@gmail.com</a>. We are here to help!</div>
         </div>
     </body>
     

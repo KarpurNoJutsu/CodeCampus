@@ -87,7 +87,7 @@ const Navbar = () => {
                 <div className="flex w-11/12 max-w-maxContent items-center justify-between">
                     {/* Left: Logo */}
                     <Link to="/">
-                        <img src={logo} width={120} loading="lazy" className="max-sm:w-18" alt="Logo of CodeCampus" />
+                        <img src={logo} width={120} loading="lazy" className="max-sm:w-18" alt="Logo of Study Byte" />
                     </Link>
 
                     {/* Center: Nav Links */}

@@ -18,7 +18,7 @@ const About = () => {
       <section className="bg-richblack-700">
         <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
           <header className="mx-auto py-20 text-4xl font-semibold lg:w-[70%]">
-            CodeCampus is at the forefront of driving innovation in online
+            Study Byte is at the forefront of driving innovation in online
             education. We're passionate about creating a brighter future by
             offering cutting-edge courses, leveraging emerging technologies,
             and nurturing a vibrant learning community.
