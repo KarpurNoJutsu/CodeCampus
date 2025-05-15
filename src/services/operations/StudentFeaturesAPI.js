@@ -1,5 +1,5 @@
 import { toast } from "react-hot-toast";
-import { studentEndpoints } from "../apis"
+import { studentEndpoints, STUDENTS_API } from "../apis"
 import { apiConnector } from "../apiConnector";
 import rzrLogo from "../../assets/Logo/rzp_logo.png";
 import { setPaymentLoading } from "../../slices/courseSlice";
@@ -105,4 +105,16 @@ async function verifyPayment(bodyData,token,navigate,dispatch){
     }
     toast.dismiss(toastId);
     dispatch(setPaymentLoading(false));
+}
+
+export const getPurchaseHistory = async (token) => {
+  try {
+    const response = await apiConnector("GET", STUDENTS_API.PURCHASE_HISTORY, null, {
+      Authorization: `Bearer ${token}`,
+    })
+    return response.data
+  } catch (error) {
+    console.log("GET_PURCHASE_HISTORY_API API ERROR............", error)
+    throw error
+  }
 }

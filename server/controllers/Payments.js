@@ -153,3 +153,53 @@ exports.sendPaymentSuccessEmail=async(req,res)=>{
     }
 }
 
+// Get user's purchase history
+exports.getPurchaseHistory = async (req, res) => {
+    const userId = req.user.id;
+    try {
+        const user = await User.findById(userId)
+            .populate({
+                path: 'courses',
+                select: 'courseName price thumbnail',
+            });
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        // Get course progress for each course
+        const purchaseHistory = await Promise.all(user.courses.map(async (course) => {
+            const progress = await CourseProgress.findOne({
+                courseID: course._id,
+                userId: userId
+            });
+
+            return {
+                id: course._id,
+                courseName: course.courseName,
+                amount: course.price,
+                date: progress.createdAt,
+                status: progress.completedVideos.length > 0 ? "in-progress" : "not-started",
+                orderId: `ORD${course._id.toString().slice(-6)}`,
+                paymentId: `PAY${course._id.toString().slice(-6)}`,
+                thumbnail: course.thumbnail,
+                progress: progress.completedVideos.length
+            };
+        }));
+
+        res.status(200).json({
+            success: true,
+            data: purchaseHistory
+        });
+    } catch (error) {
+        console.error("Error fetching purchase history:", error);
+        res.status(500).json({
+            success: false,
+            message: "Error fetching purchase history"
+        });
+    }
+};
+

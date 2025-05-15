@@ -70,3 +70,14 @@ export const settingsEndpoints = {
   CHANGE_PASSWORD_API: "/api/v1/auth/changepassword",
   DELETE_PROFILE_API: "/api/v1/profile/deleteProfile",
 }
+
+// CERTIFICATE ENDPOINTS
+export const certificateEndpoints = {
+  GENERATE_CERTIFICATE_API: "/api/v1/certificate/generate",
+  GET_CERTIFICATE_API: "/api/v1/certificate",
+}
+
+export const STUDENTS_API = {
+  ENROLLED_COURSES: BASE_URL + "/profile/enrolledCourses",
+  PURCHASE_HISTORY: BASE_URL + "/payments/purchase-history",
+}

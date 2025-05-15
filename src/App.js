@@ -30,6 +30,8 @@ import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourses/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import Student from "./components/core/Dashboard/StudentDashboard/Student";
+import PurchaseHistory from "./components/core/Dashboard/PurchaseHistory";
 
 function App() {
   const dispatch = useDispatch();
@@ -89,6 +91,8 @@ function App() {
           <>
           <Route path="dashboard/cart" element={<Cart />} />
           <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+          <Route path="dashboard/student" element={<Student />} />
+          <Route path="dashboard/purchase-history" element={<PurchaseHistory />} />
           </>
         )
       }

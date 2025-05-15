@@ -1,10 +1,12 @@
 const express=require("express");
 const app=express();
+const path = require("path");
 
 const userRoute=require('./routes/User');
 const profileRoute=require('./routes/Profile');
 const paymentRoute=require('./routes/Payments');
 const courseRoute=require('./routes/Course');
+const certificateRoute=require('./routes/Certificate');
 
 const database=require("./config/database");
 const cookieParser=require("cookie-parser");
@@ -36,6 +38,9 @@ app.use(
     })
 )
 
+// Serve static files from the certificates directory
+app.use('/certificates', express.static(path.join(__dirname, 'certificates')));
+
 // cloudinary connection
 cloudinaryConnect();
 
@@ -44,6 +49,7 @@ app.use("/api/v1/auth",userRoute);
 app.use("/api/v1/profile",profileRoute);
 app.use("/api/v1/course",courseRoute);
 app.use("/api/v1/payment",paymentRoute);
+app.use("/api/v1/certificate",certificateRoute);
 
 // default route
 app.get("/",(req,res)=>{
